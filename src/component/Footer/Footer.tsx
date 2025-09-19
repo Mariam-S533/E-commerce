@@ -9,7 +9,7 @@ function Footer() {
   return (
     <>
     <div className=' container mx-auto my-10'>
-        <div className='grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1'>
+        <div className='grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 gap-4 md:gap-1 w-[90%] mx-auto'>
 
           <div className='col-span-1 text-center sm:mb-5'>
             <div className='flex flex-col gap-1 items-center justify-center'>
@@ -37,10 +37,11 @@ function Footer() {
 
         </div>
     </div>
+
     <div className=' mt-10'>
 
         <div className='container mx-auto'>
-                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 my-2 sm:items-center'>
+                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-5 md:gap-0 w-[80%] mx-auto md:w-full'>
 
           <div className='col-span-1'>
             <div className="flex flex-col gap-5">

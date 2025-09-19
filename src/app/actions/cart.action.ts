@@ -1,6 +1,7 @@
 "use server"
 
 import {userToken} from "@/lib/userToken"
+import { toast } from "sonner"
 
 export async function getUserCart() {
 
@@ -30,7 +31,7 @@ export async function addToCart(id : string) {
     
 
     if(!token){
-        throw new Error('You must be logged in to add to cart')
+        toast.error('You must be logged in to add to cart')
     }
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/cart`, {

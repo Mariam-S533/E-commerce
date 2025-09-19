@@ -1,6 +1,7 @@
 "use server"
 
 import {userToken} from "@/lib/userToken"
+import { toast } from "sonner"
 
 export async function getUserWishlist() {
 
@@ -30,7 +31,7 @@ export async function addProductToWishlist(id: string) {
     
 
     if(!token){
-        throw new Error('You must be logged in to add to wishlist')
+        toast.error('You must be logged in to add to wishlist')
     }
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/wishlist`, {

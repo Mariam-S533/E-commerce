@@ -17,7 +17,7 @@ export async function cashOrder(cartId : string, shippingAddress: shipping) {
         throw new Error('You must be logged in to add to cart')
     }
 
-    const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/${cartId}`, {
         method: 'POST',
         headers:{
             token : token as string,
@@ -41,7 +41,7 @@ export async function onlinePayment(cartId : string, shippingAddress: shipping) 
         throw new Error('You must be logged in to add to cart')
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+    const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000"
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}`, {
         method: 'POST',

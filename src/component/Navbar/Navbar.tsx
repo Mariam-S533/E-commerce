@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Heart,  Menu , LogOut, ShoppingBag } from 'lucide-react';
+import { Heart,  Menu , LogOut, ShoppingBag, User } from 'lucide-react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList} from "@/components/ui/navigation-menu"  
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet"
@@ -51,7 +51,7 @@ function Navbar() {
           <NavigationMenuList className='lg:flex hidden  gap-8 text-lg '>
             {navItems.map(linkItem => (
 
-              <NavigationMenuItem key={linkItem.href}
+              <NavigationMenuItem  key={linkItem.href}
               className={ ` border-b-2 pb-1  ${pathname === linkItem.href ? " border-black": "border-transparent hover:border-gray-400"}`}
               > 
               <Link href={linkItem.href}>{linkItem.label}</Link>
@@ -60,17 +60,17 @@ function Navbar() {
             )}
           </NavigationMenuList>
 
-         {!session.data &&(
-            <NavigationMenuList className=' '>
-            <NavigationMenuItem className='flex text-lg gap-1 items-center '>
-              <Link href="/register">Register</Link> <span>/</span>
-               < Link href="/login" className='text-gray-500'>Sign in</Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-         )
-         }
 
             <NavigationMenuList className='flex gap-1'>
+
+              
+         {!session.data &&(
+            <NavigationMenuItem className='flex text-lg gap-1 items-center '>
+               < Link href="/login" className='text-gray-600 hover:text-gray-900'>Sign in</Link>
+               <User/>
+            </NavigationMenuItem>
+         )
+         }
 
               <NavigationMenuItem className='p-2'>
               <Link href="/wishlist"><Heart/></Link>

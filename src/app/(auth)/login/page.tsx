@@ -57,7 +57,7 @@ function Login() {
   return (
     <>
 
-        <div className="w-1/2 mx-auto bg-white p-6 rounded-lg shadow-lg my-20">
+        <div className="lg:w-1/2 xl:w-1/2 md:w-3/4 w-[90%] mx-auto bg-white p-6 rounded-lg shadow-lg my-20">
     {errorMsg && <p className='text-red-700 text-center'>{errorMsg}</p>}
       <h1 className='text-3xl font-bold text-center m-5'>Sign In!</h1>
       <button className='border-1 w-full py-1 rounded-sm'>Continue with googel</button>
